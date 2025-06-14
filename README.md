@@ -1,10 +1,3 @@
-Here’s a **detailed and professional `README.md`** file for your **AI Blog Image Generator** project using LangChain and OpenAI.
-
-You can save this as a file named `README.md` in the root of your project directory.
-
----
-
-```markdown
 # 🖼️ AI Blog Image Generator using LangChain + OpenAI (DALL·E 3)
 
 This project is a smart AI-powered system that:
