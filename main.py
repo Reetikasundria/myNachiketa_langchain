@@ -5,10 +5,10 @@ from image_generator import generate_images
 from safety_checker import is_safe
 
 def main():
-    url = "https://www.mynachiketa.com/post/speech-on-kabir-das-jayanti-in-english?uniqueIdentifier=aHR1pw1749907013055"
+    url = "https://www.mynachiketa.com/post/speech-on-hanuman-jayanti-in-english?uniqueIdentifier=xQfEvo1749967733448"
     print("\nFetching blog...")
     blog_text = fetch_blog(url)
-    #print(blog_text)
+    # print(blog_text)
 
     print("\nExtracting visual segments...")
     segments = extract_segments(blog_text)
