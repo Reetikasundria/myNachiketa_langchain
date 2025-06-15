@@ -189,6 +189,45 @@ Now in the output folder
 ![image_3](output/images/image_3.png)
 ![image_4](output/images/image_4.png)
 
+## 🎯 Prompt Refinement Strategy
+To generate high-quality, child-friendly illustrations from blog content, I implemented a two-step prompt refinement strategy using LangChain and OpenAI GPT-4.
+
+Step 1: Segment Extraction
+After scraping the blog post using Requests + BeautifulSoup, I used GPT-4 via LangChain to analyze the full text and extract 3–4 key visual moments (e.g., historical scenes, group activities, or symbolic references). Each segment was a short sentence suitable for illustration.
+
+Step 2: Guided Prompt Enhancement
+Each segment was then passed to a refinement agent that transformed it into a vivid image prompt with the following constraints:
+
+Historical accuracy (e.g., Kabir Das depicted as an elderly saint in 15th-century India)
+
+Cultural relevance (Indian village settings, traditional clothing, banyan trees, etc.)
+
+Child-friendly tone (no violence, negativity, or abstract surrealism)
+
+Avoidance of fantasy unless explicitly relevant to the story
+
+The refined prompt asked the AI to “act like a visual storyteller” and included rules to ground the output in reality, ensuring the images matched the educational intent of myNachiketa’s content.
+
+### Safety Checks
+Before passing prompts to the image generation API, I implemented a keyword-based safety filter using a list of blocked terms (e.g., "naked", "gun", "war", "blood", etc.). If a prompt contained any unsafe keywords, it was skipped or flagged. This ensured:
+
+No NSFW, violent, or inappropriate material was generated. 
+
+Content remained suitable for children and educational platforms.
+
+For image generation, I used OpenAI's DALL·E 3 API with response_format="url" and manually reviewed the results for compliance.
+
+### Outcome
+This strategy resulted in image prompts that:
+
+Captured the essence of the blog content
+
+Remained visually grounded and respectful of cultural and historical context
+
+Were suitable for children and educational storytelling
+
+It strikes a balance between creativity, safety, and truthfulness, making the outputs engaging yet appropriate.
+
 ## Author
     Build by Reetika
 
