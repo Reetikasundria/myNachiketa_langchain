@@ -5,7 +5,7 @@ from image_generator import generate_images
 from safety_checker import is_safe
 
 def main():
-    url = "https://www.mynachiketa.com/post/speech-on-hanuman-jayanti-in-english?uniqueIdentifier=xQfEvo1749967733448"
+    url = "https://www.mynachiketa.com/post/10-lines-on-buddha-purnima-in-english?uniqueIdentifier=BfbaOX1749982662232"
     print("\nFetching blog...")
     blog_text = fetch_blog(url)
     # print(blog_text)
