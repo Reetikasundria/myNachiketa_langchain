@@ -176,6 +176,19 @@ Each image corresponds to one refined visual prompt from the blog.
 
 ---
 
+## Sample Run
+```bash
+python main.py
+```
+![Terminal_output_1](Screenshot/image.png)
+![Terminal_output_2](Screenshot/image-1.png)
+
+Now in the output folder 
+![image_1](output/images/image_1.png)
+![image_2](output/images/image_2.png)
+![image_3](output/images/image_3.png)
+![image_4](output/images/image_4.png)
+
 ## Author
     Build by Reetika
 
