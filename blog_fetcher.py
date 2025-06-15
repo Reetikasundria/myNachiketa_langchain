@@ -5,15 +5,16 @@ def fetch_blog(url):
     response = requests.get(url)
     soup = BeautifulSoup(response.content, "html.parser")
 
+    blog_container = soup.find("div", class_="EPigl")
+    
+    if not blog_container:
+        return "Blog content not found."
+
     blog_texts = []
 
-    for tag in soup.find_all(['p', 'h3', 'h4']):
-        if tag.get_text(strip=True):
-            blog_texts.append(tag.get_text(strip=True)) 
+    for tag in blog_container.find_all(['p', 'h3', 'h4', 'span']):
+        text = tag.get_text(strip=True)
+        if text:
+            blog_texts.append(text)
 
-    for tag in soup.select('strong em, strong span, span strong em'):
-        if tag.get_text(strip=True):
-            blog_texts.append(tag.get_text(strip=True))
-
-    full_blog = '\n\n'.join(blog_texts)
-    return full_blog
+    return '\n\n'.join(blog_texts)
